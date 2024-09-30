@@ -4,25 +4,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class HeapSort {
-
-  /**
-   * Function that sorts an array.
-   *
-   * @param arr — array;
-   */
+    /**
+     * Function that sorts an array.
+     *
+     * @param arr — array;
+     */
     public void heapsort(int[] arr) {
-        int N = arr.length;
+        int n = arr.length;
 
-        for (int i = N / 2 - 1; i >= 0; i--) {
-          heapify(arr, N, i);
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(arr, n, i);
         }
 
-        for (int i = N - 1; i > 0; i--) {
-          int tmp = arr[0];
-          arr[0] = arr[i];
-          arr[i] = tmp;
+        for (int i = n - 1; i > 0; i--) {
+            int tmp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = tmp;
 
-          heapify(arr, i, 0);
+            heapify(arr, i, 0);
         }
     }
 
@@ -39,19 +38,19 @@ public class HeapSort {
         int right = 2 * i + 2;
 
         if (right < N && arr[right] > arr[largest]) {
-          largest = right;
+            largest = right;
         }
 
         if (left < N && arr[left] > arr[largest]) {
-          largest = left;
+            largest = left;
         }
 
         if (largest != i) {
-          int tmp = arr[i];
-          arr[i] = arr[largest];
-          arr[largest] = tmp;
+            int tmp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = tmp;
 
-          heapify(arr, N, largest);
+            heapify(arr, N, largest);
         }
     }
 
