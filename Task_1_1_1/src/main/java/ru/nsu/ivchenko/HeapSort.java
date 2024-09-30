@@ -1,10 +1,10 @@
 package ru.nsu.ivchenko;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class HeapSort {
-    public void heapsort(int arr[])
-    {
+    public void heapsort(int arr[]) {
         int N = arr.length;
 
         for (int i = N / 2 - 1; i >= 0; i--)
@@ -18,6 +18,7 @@ public class HeapSort {
             heapify(arr, i, 0);
         }
     }
+
     /**
      * Function that swaps elems in binary tree if parent more/less than child.
      *
@@ -25,11 +26,10 @@ public class HeapSort {
      * @param i   — current index in array.
      * @param N   — len of array.
      */
-    void heapify(int arr[], int N, int i)
-    {
+    void heapify(int arr[], int N, int i) {
         int largest = i;
-        int left = 2*i+1;
-        int right = 2*i+2;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
 
         if (right < N && arr[right] > arr[largest])
             largest = right;
@@ -45,7 +45,8 @@ public class HeapSort {
             heapify(arr, N, largest);
         }
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         /*HeapSort hs = new HeapSort();
         Random random = new Random();
 
