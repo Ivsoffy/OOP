@@ -1,10 +1,7 @@
 package ru.nsu.ivchenko;
 
 import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import ru.nsu.ivchenko.controllers.Dealer;
 import ru.nsu.ivchenko.controllers.User;
 import ru.nsu.ivchenko.models.Card;
