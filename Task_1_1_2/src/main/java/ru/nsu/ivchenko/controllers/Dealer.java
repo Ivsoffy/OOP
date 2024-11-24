@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Dealer {
 
-    private LinkedList<Card> hand = new LinkedList<>();
+    private final LinkedList<Card> hand = new LinkedList<>();
     private int bill = 0;
     private int open = 0;
 

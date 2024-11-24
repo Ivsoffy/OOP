@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class User {
 
-    private LinkedList<Card> hand = new LinkedList<>();
+    private final LinkedList<Card> hand = new LinkedList<>();
     private int bill = 0;
 
     public int step() {
