@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.ivchenko"},{"l":"ru.nsu.ivchenko.controllers"},{"l":"ru.nsu.ivchenko.models"}]
