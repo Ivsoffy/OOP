@@ -11,14 +11,17 @@ public enum CardType {
 
     private final String type;
     private final int value;
+
     CardType(String type, int value) {
         this.type = type;
         this.value = value;
     }
 
-    public int getValue(){
+    public int getValue() {
         return value;
     }
-    public String getType(){ return type;
+
+    public String getType() {
+        return type;
     }
 }

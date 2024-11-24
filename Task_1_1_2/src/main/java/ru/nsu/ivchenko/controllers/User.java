@@ -12,31 +12,32 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class User {
+
     private LinkedList<Card> hand = new LinkedList<>();
     private int bill = 0;
 
-    public int step(){
-        while (true){
+    public int step() {
+        while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 int id = scanner.nextInt();
-                if(id == 0 || id == 1){
+                if (id == 0 || id == 1) {
                     return id;
                 } else {
                     throw new InputMismatchException("Err");
                 }
-            } catch (Exception e){
-                System.out.println("Err");
+            } catch (Exception e) {
+                System.out.println("Введена неверная инструкция. Попробуйте еще раз.");
             }
         }
     }
 
-    public void setCard(Card card){
-        if(card.getName().equals(CardType.Ace.name())){
+    public void setCard(Card card) {
+        if (card.getName().equals(CardType.Ace.name())) {
             Card ace;
-            if(getBalance() <= 10) {
+            if (getBalance() <= 10) {
                 ace = new Card(CardType.Ace, card.getSuit(), 11);
-            }else {
+            } else {
                 ace = new Card(CardType.Ace, card.getSuit(), 1);
             }
             hand.add(ace);
@@ -45,28 +46,28 @@ public class User {
         }
     }
 
-    public LinkedList<Card> getHand(){
+    public LinkedList<Card> getHand() {
         return hand;
     }
 
-    public int getBalance(){
+    public int getBalance() {
         int res = 0;
-        for(Card c : hand){
+        for (Card c : hand) {
             res += c.getValue();
         }
         return res;
     }
 
-    public void clearBalance(){
+    public void clearBalance() {
         hand.clear();
     }
 
 
-    public void win(){
+    public void win() {
         bill++;
     }
 
-    public int getBill(){
+    public int getBill() {
         return bill;
     }
 }
