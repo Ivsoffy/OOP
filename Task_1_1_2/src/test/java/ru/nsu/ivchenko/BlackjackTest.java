@@ -1,7 +1,7 @@
 package ru.nsu.ivchenko;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nsu.ivchenko.controllers.Dealer;
 import ru.nsu.ivchenko.controllers.User;
 import ru.nsu.ivchenko.models.Card;
@@ -11,8 +11,8 @@ import ru.nsu.ivchenko.models.Suit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class BlackjackTest {
 

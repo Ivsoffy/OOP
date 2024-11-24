@@ -7,7 +7,8 @@ import ru.nsu.ivchenko.models.Card;
 import ru.nsu.ivchenko.models.CardType;
 import ru.nsu.ivchenko.models.Suit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DealerTest {
 
