@@ -1,19 +1,17 @@
-package ru.nsu.ivchenko;
+package ru.nsu.ivchenko.models;
 
 import ru.nsu.ivchenko.controllers.Dealer;
 import ru.nsu.ivchenko.controllers.User;
-import ru.nsu.ivchenko.models.Card;
-import ru.nsu.ivchenko.models.DeckOfCards;
 
 
 public class Blackjack {
 
-    private static final DeckOfCards deck = new DeckOfCards();
-    private static final Dealer DEALER = new Dealer();
-    private static final User user = new User();
+    private final DeckOfCards deck;
+    private final Dealer dealer;
+    private final User user;
     private static int round = 0;
 
-    public static void sleeping() {
+    public void sleeping() {
         try {
             Thread.sleep(1500); // Задержка на 1.5 секунды
         } catch (InterruptedException e) {
@@ -21,21 +19,21 @@ public class Blackjack {
         }
     }
 
-    public static void printHands() {
+    public void printHands() {
         System.out.println("    Ваши карты: " + user.getHand() + " --> " + user.getBalance());
-        if (DEALER.getOpen() == 0) {
-            System.out.println("    Карты дилера: [" + DEALER.getHand() + ", <закрытая карта>]");
+        if (dealer.getOpen() == 0) {
+            System.out.println("    Карты дилера: [" + dealer.getHand() + ", <закрытая карта>]");
         } else {
             System.out.println(
-                "    Карты дилера: " + DEALER.getOpenHand() + " --> " + DEALER.getBalance());
+                "    Карты дилера: " + dealer.getOpenHand() + " --> " + dealer.getBalance());
         }
 
     }
 
-    public static void start() {
+    public void start() {
 
-        DEALER.setCard(deck.getCard());
-        DEALER.setCard(deck.getCard());
+        dealer.setCard(deck.getCard());
+        dealer.setCard(deck.getCard());
         user.setCard(deck.getCard());
         user.setCard(deck.getCard());
 
@@ -53,52 +51,58 @@ public class Blackjack {
             if (res == 1) {
                 Card card = deck.getCard();
                 user.setCard(card);
-                System.out.println("Вы открыли карту " + card.toString());
+                System.out.println("Вы открыли карту " + card);
                 printHands();
             }
         }
         sleeping();
 
         System.out.println(
-            "Ход дилера\nДилер открывает закрытую карту " + DEALER.getOpenHand().get(1));
-        DEALER.setOpen();
+            "Ход дилера\nДилер открывает закрытую карту " + dealer.getOpenHand().get(1));
+        dealer.setOpen();
         printHands();
-        while (DEALER.getBalance() <= 17) {
+        while (dealer.getBalance() <= 17) {
             Card card = deck.getCard();
-            DEALER.setCard(card);
+            dealer.setCard(card);
             System.out.println("Дилер открывает карту " + card);
             printHands();
         }
 
         sleeping();
         if (user.getBalance() == 21 || (
-            (user.getBalance() > DEALER.getBalance() || DEALER.getBalance() > 21)
+            (user.getBalance() > dealer.getBalance() || dealer.getBalance() > 21)
                 && user.getBalance() < 21)) {
             user.win();
-            System.out.print("Вы выиграли раунд! Счет " + user.getBill() + ":" + DEALER.getBill());
+            System.out.print("Вы выиграли раунд! Счет " + user.getBill() + ":" + dealer.getBill());
         } else {
-            DEALER.win();
-            System.out.print("Вы проиграли! Счет " + user.getBill() + ":" + DEALER.getBill());
+            dealer.win();
+            System.out.print("Вы проиграли! Счет " + user.getBill() + ":" + dealer.getBill());
 
         }
-        if (user.getBill() > DEALER.getBill()) {
+        if (user.getBill() > dealer.getBill()) {
             System.out.println(" в вашу пользу.");
-        } else if (user.getBill() < DEALER.getBill()) {
+        } else if (user.getBill() < dealer.getBill()) {
             System.out.println(" в пользу диллера.");
         } else {
             System.out.println(".");
         }
     }
 
-    public static void main(String[] args) {
+    public Blackjack(DeckOfCards deck, Dealer dealer, User user) {
+        this.deck = deck;
+        this.dealer = dealer;
+        this.user = user;
+    }
+
+    public void run() {
         System.out.println("Добро пожаловать в Блэкджек!");
         while (true) {
-            System.out.println("---------------------------");
-            System.out.println("Раунд " + ++round);
-            start();
-            user.clearBalance();
-            DEALER.clearBalance();
-            sleeping();
+                System.out.println("---------------------------");
+                System.out.println("Раунд " + ++round);
+                start();
+                user.clearBalance();
+                dealer.clearBalance();
+                sleeping();
         }
     }
 }

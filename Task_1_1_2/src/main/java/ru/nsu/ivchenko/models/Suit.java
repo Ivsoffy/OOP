@@ -1,5 +1,8 @@
 package ru.nsu.ivchenko.models;
 
+import lombok.Getter;
+
+@Getter
 public enum Suit {
     Diamonds("Бубны"),
     Hearts("Червы"),
@@ -12,7 +15,4 @@ public enum Suit {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
-    }
 }
