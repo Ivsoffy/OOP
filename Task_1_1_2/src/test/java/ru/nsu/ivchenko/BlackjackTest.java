@@ -3,7 +3,6 @@ package ru.nsu.ivchenko;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -37,7 +36,7 @@ class BlackjackTest {
 
         blackjack = new Blackjack(deckMock, dealerMock, userMock);
 
-        Card card1 = new Card("10", Suit.Hearts );
+        Card card1 = new Card("10", Suit.Hearts);
         Card card2 = new Card("6", Suit.Spades);
 
         LinkedList<Card> hand = new LinkedList<>();
@@ -49,7 +48,7 @@ class BlackjackTest {
 
     @Test
     void testStartGame() {
-        Card card1 = new Card("10", Suit.Hearts );
+        Card card1 = new Card("10", Suit.Hearts);
         Card card2 = new Card("6", Suit.Spades);
         Card card3 = new Card("8", Suit.Diamonds);
         Card card4 = new Card("4", Suit.Clubs);
@@ -67,8 +66,6 @@ class BlackjackTest {
         verify(dealerMock, times(2)).setCard(any(Card.class));
         verify(userMock, times(2)).setCard(any(Card.class));
     }
-
-
 
 
     @Test

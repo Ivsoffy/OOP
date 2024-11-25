@@ -1,10 +1,9 @@
 package ru.nsu.ivchenko;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.util.HashSet;
 import java.util.Set;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nsu.ivchenko.models.Card;
 import ru.nsu.ivchenko.models.DeckOfCards;
 
