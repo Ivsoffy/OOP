@@ -31,12 +31,10 @@ class BlackjackTest {
 
     @BeforeEach
     void setUp() {
-        // Используем моки для зависимостей
         deckMock = Mockito.mock(DeckOfCards.class);
         dealerMock = Mockito.mock(Dealer.class);
         userMock = Mockito.mock(User.class);
 
-        // Создаем тестовый экземпляр класса Blackjack с моком зависимостей
         blackjack = new Blackjack(deckMock, dealerMock, userMock);
 
         Card card1 = new Card("10", Suit.Hearts );
@@ -51,7 +49,6 @@ class BlackjackTest {
 
     @Test
     void testStartGame() {
-        // Мокаем поведение раздачи карт
         Card card1 = new Card("10", Suit.Hearts );
         Card card2 = new Card("6", Suit.Spades);
         Card card3 = new Card("8", Suit.Diamonds);
@@ -65,10 +62,8 @@ class BlackjackTest {
         when(dealerMock.getBalance())
             .thenReturn(18);
 
-        // Старт игры
         blackjack.start();
 
-        // Проверяем, что карты раздаются правильно
         verify(dealerMock, times(2)).setCard(any(Card.class));
         verify(userMock, times(2)).setCard(any(Card.class));
     }
@@ -102,7 +97,6 @@ class BlackjackTest {
         when(dealerMock.getOpen()).thenReturn(1);
 
         blackjack.printHands();
-        // Проверяем, что метод завершился корректно
         assertDoesNotThrow(() -> blackjack.printHands());
     }
 
@@ -111,17 +105,16 @@ class BlackjackTest {
         // Мокаем поведение раздачи карт
         when(deckMock.getCard())
             .thenReturn(
-                new Card("10", Suit.Hearts), new Card("6", Suit.Spades),  // Карты дилера
-                new Card("8", Suit.Diamonds), new Card("4", Suit.Clubs)   // Карты игрока
+                new Card("10", Suit.Hearts), new Card("6", Suit.Spades),
+                new Card("8", Suit.Diamonds), new Card("4", Suit.Clubs)
             );
 
-        when(userMock.step()).thenReturn(1, 0); // Игрок берет одну карту и останавливается
-        when(userMock.getBalance()).thenReturn(20); // Финальный баланс игрока
-        when(dealerMock.getBalance()).thenReturn(18); // Финальный баланс дилера
+        when(userMock.step()).thenReturn(1, 0);
+        when(userMock.getBalance()).thenReturn(20);
+        when(dealerMock.getBalance()).thenReturn(18);
 
         blackjack.start();
 
-        // Проверяем результат игры
         verify(userMock).win();
         verify(dealerMock, never()).win();
     }
