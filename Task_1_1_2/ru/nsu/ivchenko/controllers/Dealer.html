@@ -177,47 +177,65 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clearBalance()">clearBalance</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Clear dealer hand and makes close mode for dealer's hand.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBalance()">getBalance</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Count Balance.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBill()">getBill</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for the bill.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHand()">getHand</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for hand.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOpen()">getOpen</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for open.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.util.LinkedList&lt;<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOpenHand()">getOpenHand</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for hand.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCard(ru.nsu.ivchenko.models.Card)">setCard</a></span>&#8203;(<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&nbsp;card)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Adds card in hand.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOpen()">setOpen</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Setter for open - makes it so that dealer plays in open mode.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#win()">win</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Adds a victoru counter.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -269,6 +287,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setCard</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setCard&#8203;(<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&nbsp;card)</pre>
+<div class="block">Adds card in hand.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>card</code> - - just card</dd>
+</dl>
 </li>
 </ul>
 <a id="getHand()">
@@ -278,6 +301,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHand</h4>
 <pre class="methodSignature">public&nbsp;<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&nbsp;getHand()</pre>
+<div class="block">Getter for hand.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>first card in hand (for the game in closed)</dd>
+</dl>
 </li>
 </ul>
 <a id="getOpenHand()">
@@ -287,6 +315,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getOpenHand</h4>
 <pre class="methodSignature">public&nbsp;java.util.LinkedList&lt;<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&gt;&nbsp;getOpenHand()</pre>
+<div class="block">Getter for hand.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>hand - all dealer's cards</dd>
+</dl>
 </li>
 </ul>
 <a id="getOpen()">
@@ -296,6 +329,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getOpen</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getOpen()</pre>
+<div class="block">Getter for open.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>open</dd>
+</dl>
 </li>
 </ul>
 <a id="setOpen()">
@@ -305,6 +343,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setOpen</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setOpen()</pre>
+<div class="block">Setter for open - makes it so that dealer plays in open mode.</div>
 </li>
 </ul>
 <a id="getBalance()">
@@ -314,6 +353,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBalance</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBalance()</pre>
+<div class="block">Count Balance.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>res - the amount of the cards</dd>
+</dl>
 </li>
 </ul>
 <a id="clearBalance()">
@@ -323,6 +367,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>clearBalance</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;clearBalance()</pre>
+<div class="block">Clear dealer hand and makes close mode for dealer's hand.</div>
 </li>
 </ul>
 <a id="win()">
@@ -332,6 +377,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>win</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;win()</pre>
+<div class="block">Adds a victoru counter.</div>
 </li>
 </ul>
 <a id="getBill()">
@@ -341,6 +387,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBill</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBill()</pre>
+<div class="block">Getter for the bill.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>bill - victory counter</dd>
+</dl>
 </li>
 </ul>
 </li>

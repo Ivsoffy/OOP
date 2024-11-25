@@ -177,37 +177,51 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clearBalance()">clearBalance</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Clear all cards in hand.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBalance()">getBalance</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for balance.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBill()">getBill</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for the bill.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.LinkedList&lt;<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHand()">getHand</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Getter for hand.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCard(ru.nsu.ivchenko.models.Card)">setCard</a></span>&#8203;(<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&nbsp;card)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Set card in hand and update it value if it is Ace.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#step()">step</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">User's step.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#win()">win</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Adds a victoru counter.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -259,6 +273,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>step</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;step()</pre>
+<div class="block">User's step.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>id - the user's decision (whether to take the card)</dd>
+</dl>
 </li>
 </ul>
 <a id="setCard(ru.nsu.ivchenko.models.Card)">
@@ -268,6 +287,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setCard</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setCard&#8203;(<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&nbsp;card)</pre>
+<div class="block">Set card in hand and update it value if it is Ace.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>card</code> - - just card</dd>
+</dl>
 </li>
 </ul>
 <a id="getHand()">
@@ -277,6 +301,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHand</h4>
 <pre class="methodSignature">public&nbsp;java.util.LinkedList&lt;<a href="../models/Card.html" title="class in ru.nsu.ivchenko.models">Card</a>&gt;&nbsp;getHand()</pre>
+<div class="block">Getter for hand.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>hand - all cards in hand</dd>
+</dl>
 </li>
 </ul>
 <a id="getBalance()">
@@ -286,6 +315,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBalance</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBalance()</pre>
+<div class="block">Getter for balance.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>res - the amount of the cards</dd>
+</dl>
 </li>
 </ul>
 <a id="clearBalance()">
@@ -295,6 +329,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>clearBalance</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;clearBalance()</pre>
+<div class="block">Clear all cards in hand.</div>
 </li>
 </ul>
 <a id="win()">
@@ -304,6 +339,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>win</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;win()</pre>
+<div class="block">Adds a victoru counter.</div>
 </li>
 </ul>
 <a id="getBill()">
@@ -313,6 +349,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBill</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBill()</pre>
+<div class="block">Getter for the bill.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>bill - victory counter</dd>
+</dl>
 </li>
 </ul>
 </li>
