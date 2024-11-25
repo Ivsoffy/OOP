@@ -4,19 +4,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Deck of cards that contains 52 cards.
+ */
 public class DeckOfCards {
 
     private final List<Card> cards = new LinkedList<>();
 
     /**
-     * Constructor for DeckOfCards
+     * Constructor for DeckOfCards.
      */
     public DeckOfCards() {
         shuffle();
     }
 
     /**
-     * Make deck of cards (52 cards)
+     * Make deck of cards (52 cards).
      */
     public void shuffle() {
         for (Suit suit : Suit.values()) {
@@ -32,9 +35,9 @@ public class DeckOfCards {
     }
 
     /**
-     * Function to get random card and remove it from deck
+     * Function to get random card and remove it from deck.
      *
-     * @return new_card - random card
+     * @return newCard - random card
      */
     public Card getCard() {
         if (cards.isEmpty()) {
@@ -42,13 +45,13 @@ public class DeckOfCards {
         }
         Random random = new Random();
         int randomNumber = random.nextInt(cards.size());
-        Card new_card = cards.get(randomNumber);
+        Card newCard = cards.get(randomNumber);
         cards.remove(randomNumber);
-        return new_card;
+        return newCard;
     }
 
     /**
-     * Getter for cards
+     * Getter for cards.
      *
      * @return cards - all cards in deck
      */

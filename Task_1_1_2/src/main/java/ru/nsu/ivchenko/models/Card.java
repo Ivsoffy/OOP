@@ -8,7 +8,7 @@ public class Card {
     private Suit suit;
 
     /**
-     * Constructor for Jack, Queen, King, Ace
+     * Constructor for Jack, Queen, King, Ace.
      *
      * @param name
      * @param suit
@@ -20,7 +20,7 @@ public class Card {
     }
 
     /**
-     * Constructor for numbers
+     * Constructor for numbers.
      *
      * @param name
      * @param suit
@@ -32,7 +32,7 @@ public class Card {
     }
 
     /**
-     * Constructor for Ace with different values
+     * Constructor for Ace with different values.
      *
      * @param name
      * @param suit

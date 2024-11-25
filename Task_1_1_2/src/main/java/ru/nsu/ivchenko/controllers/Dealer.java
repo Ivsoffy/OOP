@@ -10,7 +10,7 @@ public class Dealer {
     private int open = 0;
 
     /**
-     * Adds card in hand
+     * Adds card in hand.
      *
      * @param card - just card
      */
@@ -19,7 +19,7 @@ public class Dealer {
     }
 
     /**
-     * Getter for hand
+     * Getter for hand.
      *
      * @return first card in hand (for the game in closed)
      */
@@ -28,7 +28,7 @@ public class Dealer {
     }
 
     /**
-     * Getter for hand
+     * Getter for hand.
      *
      * @return hand - all dealer's cards
      */
@@ -37,7 +37,7 @@ public class Dealer {
     }
 
     /**
-     * Getter for open
+     * Getter for open.
      *
      * @return open
      */
@@ -46,14 +46,14 @@ public class Dealer {
     }
 
     /**
-     * Setter for open - makes it so that dealer plays in open mode
+     * Setter for open - makes it so that dealer plays in open mode.
      */
     public void setOpen() {
         open = 1;
     }
 
     /**
-     * Count Balance
+     * Count Balance.
      *
      * @return res - the amount of the cards
      */
@@ -66,7 +66,7 @@ public class Dealer {
     }
 
     /**
-     * Clear dealer hand and makes close mode for dealer's hand
+     * Clear dealer hand and makes close mode for dealer's hand.
      */
     public void clearBalance() {
         hand.clear();
@@ -74,14 +74,14 @@ public class Dealer {
     }
 
     /**
-     * Adds a victoru counter
+     * Adds a victoru counter.
      */
     public void win() {
         bill++;
     }
 
     /**
-     * Getter for the bill
+     * Getter for the bill.
      *
      * @return bill - victory counter
      */

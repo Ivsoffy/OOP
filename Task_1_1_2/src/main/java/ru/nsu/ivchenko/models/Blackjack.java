@@ -11,7 +11,7 @@ public class Blackjack {
     private static int round = 0;
 
     /**
-     * Makes a 1.5-second delay
+     * Makes a 1.5-second delay.
      */
     public void sleeping() {
         try {
@@ -22,7 +22,7 @@ public class Blackjack {
     }
 
     /**
-     * Prints dealer and user hands
+     * Prints dealer and user hands.
      */
     public void printHands() {
         System.out.println("    Ваши карты: " + user.getHand() + " --> " + user.getBalance());
@@ -36,7 +36,7 @@ public class Blackjack {
     }
 
     /**
-     * Game realisation
+     * Game realisation.
      */
     public void start() {
 
@@ -97,7 +97,7 @@ public class Blackjack {
     }
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param deck   - deck of cards
      * @param dealer - dealer
@@ -110,7 +110,7 @@ public class Blackjack {
     }
 
     /**
-     * Game in cycle
+     * Game in cycle.
      */
     public void run() {
         System.out.println("Добро пожаловать в Блэкджек!");

@@ -2,6 +2,9 @@ package ru.nsu.ivchenko.models;
 
 import lombok.Getter;
 
+/**
+ * Class that contains different suits: Diamonds, Hearts, Clubs, Spades;
+ */
 @Getter
 public enum Suit {
     Diamonds("Бубны"),
