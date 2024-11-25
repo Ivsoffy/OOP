@@ -41,7 +41,7 @@ public class Blackjack {
     /**
      * Game realisation.
      */
-    public void start() {
+    void start() {
 
         dealer.setCard(deck.getCard());
         dealer.setCard(deck.getCard());

@@ -1,4 +1,4 @@
-package ru.nsu.ivchenko;
+package ru.nsu.ivchenko.models;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertTrue;
