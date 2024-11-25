@@ -1,14 +1,14 @@
 package ru.nsu.ivchenko;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.nsu.ivchenko.controllers.User;
 import ru.nsu.ivchenko.models.Card;
 import ru.nsu.ivchenko.models.CardType;
 import ru.nsu.ivchenko.models.Suit;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class UserTest {
 

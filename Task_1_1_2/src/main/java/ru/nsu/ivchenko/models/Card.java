@@ -7,19 +7,37 @@ public class Card {
     private String name;
     private Suit suit;
 
+    /**
+     * Constructor for Jack, Queen, King, Ace
+     *
+     * @param name
+     * @param suit
+     */
     public Card(CardType name, Suit suit) {
         this.name = name.name();
         this.suit = suit;
         this.value = name.getValue();
     }
 
+    /**
+     * Constructor for numbers
+     *
+     * @param name
+     * @param suit
+     */
     public Card(String name, Suit suit) {
         this.name = name;
         this.suit = suit;
         this.value = Integer.parseInt(name);
     }
 
-
+    /**
+     * Constructor for Ace with different values
+     *
+     * @param name
+     * @param suit
+     * @param value
+     */
     public Card(CardType name, Suit suit, int value) {
         this.name = name.name();
         this.suit = suit;

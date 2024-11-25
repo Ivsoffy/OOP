@@ -3,7 +3,6 @@ package ru.nsu.ivchenko.models;
 import ru.nsu.ivchenko.controllers.Dealer;
 import ru.nsu.ivchenko.controllers.User;
 
-
 public class Blackjack {
 
     private final DeckOfCards deck;
@@ -11,6 +10,9 @@ public class Blackjack {
     private final User user;
     private static int round = 0;
 
+    /**
+     * Makes a 1.5-second delay
+     */
     public void sleeping() {
         try {
             Thread.sleep(1500); // Задержка на 1.5 секунды
@@ -19,6 +21,9 @@ public class Blackjack {
         }
     }
 
+    /**
+     * Prints dealer and user hands
+     */
     public void printHands() {
         System.out.println("    Ваши карты: " + user.getHand() + " --> " + user.getBalance());
         if (dealer.getOpen() == 0) {
@@ -30,6 +35,9 @@ public class Blackjack {
 
     }
 
+    /**
+     * Game realisation
+     */
     public void start() {
 
         dealer.setCard(deck.getCard());
@@ -88,21 +96,31 @@ public class Blackjack {
         }
     }
 
+    /**
+     * Constructor
+     *
+     * @param deck   - deck of cards
+     * @param dealer - dealer
+     * @param user   - user
+     */
     public Blackjack(DeckOfCards deck, Dealer dealer, User user) {
         this.deck = deck;
         this.dealer = dealer;
         this.user = user;
     }
 
+    /**
+     * Game in cycle
+     */
     public void run() {
         System.out.println("Добро пожаловать в Блэкджек!");
         while (true) {
-                System.out.println("---------------------------");
-                System.out.println("Раунд " + ++round);
-                start();
-                user.clearBalance();
-                dealer.clearBalance();
-                sleeping();
+            System.out.println("---------------------------");
+            System.out.println("Раунд " + ++round);
+            start();
+            user.clearBalance();
+            dealer.clearBalance();
+            sleeping();
         }
     }
 }
