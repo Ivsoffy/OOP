@@ -3,6 +3,9 @@ package ru.nsu.ivchenko.controllers;
 import java.util.LinkedList;
 import ru.nsu.ivchenko.models.Card;
 
+/**
+ * Class that simulates playing for a dealer.
+ */
 public class Dealer {
 
     private final LinkedList<Card> hand = new LinkedList<>();

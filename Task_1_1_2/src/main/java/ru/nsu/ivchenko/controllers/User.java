@@ -6,6 +6,9 @@ import java.util.Scanner;
 import ru.nsu.ivchenko.models.Card;
 import ru.nsu.ivchenko.models.CardType;
 
+/**
+ * Class that simulates playing for a user.
+ */
 public class User {
 
     private final LinkedList<Card> hand = new LinkedList<>();

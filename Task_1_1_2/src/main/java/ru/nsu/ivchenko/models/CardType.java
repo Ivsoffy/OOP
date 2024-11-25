@@ -1,7 +1,7 @@
 package ru.nsu.ivchenko.models;
 
 /**
- * Class that contains different card types (numbers, Jack, Queen, King, Ace)
+ * Class that contains different card types (numbers, Jack, Queen, King, Ace).
  */
 public enum CardType {
     Jack("Валет", 10),

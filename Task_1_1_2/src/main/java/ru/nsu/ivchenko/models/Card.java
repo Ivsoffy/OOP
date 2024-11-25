@@ -1,6 +1,8 @@
 package ru.nsu.ivchenko.models;
 
-
+/**
+ * Class that contains information about just one card.
+ */
 public class Card {
 
     private int value;
@@ -10,8 +12,8 @@ public class Card {
     /**
      * Constructor for Jack, Queen, King, Ace.
      *
-     * @param name
-     * @param suit
+     * @param name - card name
+     * @param suit - card suit
      */
     public Card(CardType name, Suit suit) {
         this.name = name.name();
@@ -22,8 +24,8 @@ public class Card {
     /**
      * Constructor for numbers.
      *
-     * @param name
-     * @param suit
+     * @param name - card name
+     * @param suit - card suit
      */
     public Card(String name, Suit suit) {
         this.name = name;
@@ -34,9 +36,9 @@ public class Card {
     /**
      * Constructor for Ace with different values.
      *
-     * @param name
-     * @param suit
-     * @param value
+     * @param name  - card name
+     * @param suit  - card suit
+     * @param value - card value (depends on card type)
      */
     public Card(CardType name, Suit suit, int value) {
         this.name = name.name();

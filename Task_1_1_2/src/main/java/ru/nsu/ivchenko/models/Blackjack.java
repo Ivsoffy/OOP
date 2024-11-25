@@ -3,6 +3,9 @@ package ru.nsu.ivchenko.models;
 import ru.nsu.ivchenko.controllers.Dealer;
 import ru.nsu.ivchenko.controllers.User;
 
+/**
+ * Class where the main action of the game is realised.
+ */
 public class Blackjack {
 
     private final DeckOfCards deck;
