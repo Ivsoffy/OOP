@@ -5,8 +5,8 @@ package ru.nsu.ivchenko;
  */
 public class Mul extends Expression {
 
-    private final Expression a;
-    private final Expression b;
+    private final Expression first;
+    private final Expression second;
 
     /**
      * Конструктор класса.
@@ -15,8 +15,8 @@ public class Mul extends Expression {
      * @param second - второе выражение.
      */
     public Mul(Expression first, Expression second) {
-        a = first;
-        b = second;
+        this.first = first;
+        this.second = second;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Mul extends Expression {
      */
     @Override
     public String toString() {
-        return "(" + a.toString() + "*" + b.toString() + ")";
+        return "(" + first.toString() + "*" + second.toString() + ")";
     }
 
     /**
@@ -35,7 +35,7 @@ public class Mul extends Expression {
      */
     @Override
     public Expression derivative(String x) {
-        return new Add(new Mul(a.derivative(x), b), new Mul(a, b.derivative(x)));
+        return new Add(new Mul(first.derivative(x), second), new Mul(first, second.derivative(x)));
     }
 
 
@@ -47,6 +47,6 @@ public class Mul extends Expression {
      */
     @Override
     public double eval(String vars) {
-        return a.eval(vars) * b.eval(vars);
+        return first.eval(vars) * second.eval(vars);
     }
 }

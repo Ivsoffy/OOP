@@ -5,8 +5,8 @@ package ru.nsu.ivchenko;
  */
 public class Div extends Expression {
 
-    private final Expression a;
-    private final Expression b;
+    private final Expression first;
+    private final Expression second;
 
     /**
      * Конструктор класса.
@@ -15,8 +15,8 @@ public class Div extends Expression {
      * @param bottom - второе выражение.
      */
     public Div(Expression top, Expression bottom) {
-        a = top;
-        b = bottom;
+        first = top;
+        second = bottom;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Div extends Expression {
      */
     @Override
     public String toString() {
-        return "(" + a.toString() + "/" + b.toString() + ")";
+        return "(" + first.toString() + "/" + second.toString() + ")";
     }
 
     /**
@@ -35,8 +35,9 @@ public class Div extends Expression {
      */
     @Override
     public Expression derivative(String x) {
-        return new Div(new Sub(new Mul(a.derivative(x), b), new Mul(a, b.derivative(x))),
-            new Mul(b, b));
+        return new Div(
+            new Sub(new Mul(first.derivative(x), second), new Mul(first, second.derivative(x))),
+            new Mul(second, second));
     }
 
 
@@ -48,8 +49,8 @@ public class Div extends Expression {
      */
     @Override
     public double eval(String vars) {
-        double l = a.eval(vars);
-        double r = b.eval(vars);
+        double l = first.eval(vars);
+        double r = second.eval(vars);
         if (r == 0) {
             throw new ArithmeticException("Division by zero");
         }

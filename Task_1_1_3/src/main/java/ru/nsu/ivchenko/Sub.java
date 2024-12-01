@@ -5,8 +5,8 @@ package ru.nsu.ivchenko;
  */
 public class Sub extends Expression {
 
-    private final Expression a;
-    private final Expression b;
+    private final Expression first;
+    private final Expression second;
 
     /**
      * Конструктор класса.
@@ -15,8 +15,8 @@ public class Sub extends Expression {
      * @param second - второе выражение.
      */
     public Sub(Expression first, Expression second) {
-        a = first;
-        b = second;
+        this.first = first;
+        this.second = second;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Sub extends Expression {
      */
     @Override
     public String toString() {
-        return "(" + a.toString() + "-" + b.toString() + ")";
+        return "(" + first.toString() + "-" + second.toString() + ")";
     }
 
     /**
@@ -35,7 +35,7 @@ public class Sub extends Expression {
      */
     @Override
     public Expression derivative(String x) {
-        return new Sub(a.derivative(x), b.derivative(x));
+        return new Sub(first.derivative(x), second.derivative(x));
     }
 
 
@@ -47,6 +47,6 @@ public class Sub extends Expression {
      */
     @Override
     public double eval(String vars) {
-        return a.eval(vars) - b.eval(vars);
+        return first.eval(vars) - second.eval(vars);
     }
 }
