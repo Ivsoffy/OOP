@@ -1,28 +1,82 @@
 package ru.nsu.ivchenko;
 
 /**
- * Interface for equations.
+ * Интерфейс для выражений.
  */
-public interface Expression {
+public abstract class Expression {
+
     /**
-     * Prints equations.
+     * Функция для рекурсивного перевода строки в выражение.
+     *
+     * @param expr - выражение в виде строки
+     * @return итоговое выражение
      */
-    void print();
+    public static Expression fromString(String expr) {
+        if (expr.matches("\\d+")) { // Если это число
+            return new Number(Integer.parseInt(expr));
+        }
+        if (expr.matches("[a-zA-Z]+")) { // Если это переменная
+            return new Variable(expr);
+        }
+
+        // Если это выражение в скобках
+        if (expr.startsWith("(") && expr.endsWith(")")) {
+            expr = expr.substring(1, expr.length() - 1); // Убираем внешние скобки
+        }
+
+        // Ищем операцию на верхнем уровне
+        int level = 0; // Уровень вложенности скобок
+        for (int i = 0; i < expr.length(); i++) {
+            char c = expr.charAt(i);
+            if (c == '(') {
+                level++;
+            } else if (c == ')') {
+                level--;
+            } else if (level == 0) { // Вне вложенных скобок
+                if (c == '+') {
+                    return new Add(fromString(expr.substring(0, i)),
+                        fromString(expr.substring(i + 1)));
+                }
+                if (c == '-') {
+                    return new Sub(fromString(expr.substring(0, i)),
+                        fromString(expr.substring(i + 1)));
+                }
+                if (c == '*') {
+                    return new Mul(fromString(expr.substring(0, i)),
+                        fromString(expr.substring(i + 1)));
+                }
+                if (c == '/') {
+                    return new Div(fromString(expr.substring(0, i)),
+                        fromString(expr.substring(i + 1)));
+                }
+            }
+        }
+
+        throw new IllegalArgumentException("Invalid expression: " + expr);
+    }
+
+    /**
+     * Выводит выражение в читаемом виде.
+     */
+    public abstract String toString();
+
+    public void print() {
+        System.out.println(toString());
+    }
 
     /**
      * Производит дифференцирование выражения.
      *
-     * @param x - variable for derivate (dx)
-     * @return new expression
+     * @param x - переменная по которой дифференцируем (dx)
+     * @return новое выражение
      */
-    Expression derivative(String x);
+    abstract Expression derivative(String x);
 
     /**
-     * Performs a value substitution instead of a variable.
+     * Реализует подстановку
      *
-     * @param vars string to substitute, passed as "var1 = val1; var2 = val2".
-     * @return result.
+     * @param vars - строка вида "var1 = val1; var2 = val2"
+     * @return результат.
      */
-    double eval(String vars);
-
+    abstract double eval(String vars);
 }

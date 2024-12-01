@@ -1,9 +1,9 @@
 package ru.nsu.ivchenko;
 
 /**
- * Класс, в котором реализована операция суммы.
+ * Класс, в котором реализована операция деления.
  */
-public class Add extends Expression {
+public class Div extends Expression {
 
     private final Expression a;
     private final Expression b;
@@ -11,12 +11,12 @@ public class Add extends Expression {
     /**
      * Конструктор класса.
      *
-     * @param first - первое выражение.
-     * @param second - второе выражение.
+     * @param top    - первое выражение.
+     * @param bottom - второе выражение.
      */
-    public Add(Expression first, Expression second) {
-        a = first;
-        b = second;
+    public Div(Expression top, Expression bottom) {
+        a = top;
+        b = bottom;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Add extends Expression {
      */
     @Override
     public String toString() {
-        return "(" + a.toString() + "+" + b.toString() + ")";
+        return "(" + a.toString() + "/" + b.toString() + ")";
     }
 
     /**
@@ -35,19 +35,24 @@ public class Add extends Expression {
      */
     @Override
     public Expression derivative(String x) {
-        return new Add(a.derivative(x), b.derivative(x));
+        return new Div(new Sub(new Mul(a.derivative(x), b), new Mul(a, b.derivative(x))),
+            new Mul(b, b));
     }
 
 
     /**
      * Реализует подстановку
      *
-     * @param vars - строка вида
-     *             "var1 = val1; var2 = val2"
+     * @param vars - строка вида "var1 = val1; var2 = val2"
      * @return результат.
      */
     @Override
     public double eval(String vars) {
-        return a.eval(vars) + b.eval(vars);
+        double l = a.eval(vars);
+        double r = b.eval(vars);
+        if (r == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return l / r;
     }
 }

@@ -1,22 +1,19 @@
 package ru.nsu.ivchenko;
 
 /**
- * Класс, в котором реализована операция суммы.
+ * Класс, в котором реализованы операции с числами.
  */
-public class Add extends Expression {
+public class Number extends Expression {
 
-    private final Expression a;
-    private final Expression b;
+    private final int num;
 
     /**
-     * Конструктор класса.
+     * Конструктор для числа.
      *
-     * @param first - первое выражение.
-     * @param second - второе выражение.
+     * @param num - само число
      */
-    public Add(Expression first, Expression second) {
-        a = first;
-        b = second;
+    public Number(int num) {
+        this.num = num;
     }
 
     /**
@@ -24,7 +21,7 @@ public class Add extends Expression {
      */
     @Override
     public String toString() {
-        return "(" + a.toString() + "+" + b.toString() + ")";
+        return String.valueOf(num);
     }
 
     /**
@@ -35,19 +32,18 @@ public class Add extends Expression {
      */
     @Override
     public Expression derivative(String x) {
-        return new Add(a.derivative(x), b.derivative(x));
+        return new Number(0);
     }
 
 
     /**
      * Реализует подстановку
      *
-     * @param vars - строка вида
-     *             "var1 = val1; var2 = val2"
+     * @param vars - строка вида "var1 = val1; var2 = val2"
      * @return результат.
      */
     @Override
     public double eval(String vars) {
-        return a.eval(vars) + b.eval(vars);
+        return num;
     }
 }
