@@ -73,7 +73,7 @@ public abstract class Expression {
     abstract Expression derivative(String x);
 
     /**
-     * Реализует подстановку
+     * Реализует подстановку.
      *
      * @param vars - строка вида "var1 = val1; var2 = val2"
      * @return результат.

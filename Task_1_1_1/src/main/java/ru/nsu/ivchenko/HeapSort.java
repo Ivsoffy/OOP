@@ -3,6 +3,9 @@ package ru.nsu.ivchenko;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Класс с реализацией сортировки heapsort.
+ */
 public class HeapSort {
     /**
      * Function that sorts an array.
@@ -30,18 +33,18 @@ public class HeapSort {
      *
      * @param arr — heap's array;
      * @param i   — current index in array.
-     * @param N   — len of array.
+     * @param n   — len of array.
      */
-    void heapify(int[] arr, int N, int i) {
+    void heapify(int[] arr, int n, int i) {
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (right < N && arr[right] > arr[largest]) {
+        if (right < n && arr[right] > arr[largest]) {
             largest = right;
         }
 
-        if (left < N && arr[left] > arr[largest]) {
+        if (left < n && arr[left] > arr[largest]) {
             largest = left;
         }
 
@@ -50,7 +53,7 @@ public class HeapSort {
             arr[i] = arr[largest];
             arr[largest] = tmp;
 
-            heapify(arr, N, largest);
+            heapify(arr, n, largest);
         }
     }
 

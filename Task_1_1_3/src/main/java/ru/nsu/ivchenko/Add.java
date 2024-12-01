@@ -11,7 +11,7 @@ public class Add extends Expression {
     /**
      * Конструктор класса.
      *
-     * @param first - первое выражение.
+     * @param first  - первое выражение.
      * @param second - второе выражение.
      */
     public Add(Expression first, Expression second) {
@@ -40,10 +40,9 @@ public class Add extends Expression {
 
 
     /**
-     * Реализует подстановку
+     * Реализует подстановку.
      *
-     * @param vars - строка вида
-     *             "var1 = val1; var2 = val2"
+     * @param vars - строка вида "var1 = val1; var2 = val2"
      * @return результат.
      */
     @Override

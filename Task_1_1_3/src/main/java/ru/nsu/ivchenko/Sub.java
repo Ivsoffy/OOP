@@ -40,7 +40,7 @@ public class Sub extends Expression {
 
 
     /**
-     * Реализует подстановку
+     * Реализует подстановку.
      *
      * @param vars - строка вида "var1 = val1; var2 = val2"
      * @return результат.
