@@ -3,7 +3,7 @@ package ru.nsu.ivchenko;
 /**
  * Класс, в котором реализована операция суммы.
  */
-public class Add extends Expression {
+public class Add implements Expression {
 
     private final Expression first;
     private final Expression second;

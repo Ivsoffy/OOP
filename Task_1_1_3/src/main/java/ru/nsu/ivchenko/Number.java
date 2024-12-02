@@ -3,7 +3,7 @@ package ru.nsu.ivchenko;
 /**
  * Класс, в котором реализованы операции с числами.
  */
-public class Number extends Expression {
+public class Number implements Expression {
 
     private final int num;
 

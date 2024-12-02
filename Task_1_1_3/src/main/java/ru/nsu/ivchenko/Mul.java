@@ -3,7 +3,7 @@ package ru.nsu.ivchenko;
 /**
  * Класс, в котором реализована операция умножения.
  */
-public class Mul extends Expression {
+public class Mul implements Expression {
 
     private final Expression first;
     private final Expression second;

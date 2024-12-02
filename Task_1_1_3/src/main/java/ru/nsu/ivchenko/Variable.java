@@ -3,7 +3,7 @@ package ru.nsu.ivchenko;
 /**
  * Класс, в котором реализованы операции с переменными.
  */
-public class Variable extends Expression {
+public class Variable implements Expression {
 
     private final String name;
 
@@ -53,11 +53,11 @@ public class Variable extends Expression {
             throw new IllegalArgumentException("Нет переменной " + name);
         }
         ind += name.length() + 3;
-        String newNum = "";
+        StringBuilder newNum = new StringBuilder();
         while (ind < vars.length() && vars.charAt(ind) != ';') {
-            newNum += vars.charAt(ind);
+            newNum.append(vars.charAt(ind));
             ind++;
         }
-        return Integer.parseInt(newNum);
+        return Integer.parseInt(newNum.toString());
     }
 }

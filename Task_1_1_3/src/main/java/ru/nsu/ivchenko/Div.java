@@ -3,7 +3,7 @@ package ru.nsu.ivchenko;
 /**
  * Класс, в котором реализована операция деления.
  */
-public class Div extends Expression {
+public class Div implements Expression {
 
     private final Expression first;
     private final Expression second;
