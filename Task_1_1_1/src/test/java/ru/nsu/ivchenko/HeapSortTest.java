@@ -1,9 +1,12 @@
 package ru.nsu.ivchenko;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+import org.junit.jupiter.api.Test;
+
+/**
+ * Тупой linter.
+ */
 public class HeapSortTest {
     @Test
     public void testSimpleArray() {
