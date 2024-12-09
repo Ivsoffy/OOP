@@ -13,7 +13,6 @@ class AdjacencyListGraphTest {
 
     static AdjacencyListGraph mtx = new AdjacencyListGraph();
 
-
     @BeforeEach
     void need() {
         mtx = new AdjacencyListGraph();
